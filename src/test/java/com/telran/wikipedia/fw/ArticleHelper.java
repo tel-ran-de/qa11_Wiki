@@ -32,4 +32,7 @@ public class ArticleHelper extends HelperBase{
         tap(By.xpath("//*[@content-desc='Navigate up']"));
     }
 
+    public void removeFromFavorites() {
+        swipeToLeft(By.id("page_list_item_container"));
+    }
 }
