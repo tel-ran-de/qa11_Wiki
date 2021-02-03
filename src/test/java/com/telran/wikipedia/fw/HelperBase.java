@@ -71,5 +71,13 @@ public class HelperBase {
                 .until(ExpectedConditions.presenceOfElementLocated(locator)).click();
     }
 
+    public void waitForElementandType(By locator, int timeOut, String text) {
+        if (text!=null) {
+            waitForElementandTap(locator,timeOut);
+            driver.findElement(locator).clear();
+            driver.findElement(locator).sendKeys(text);
+        }
+    }
+
 
 }

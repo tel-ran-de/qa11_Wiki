@@ -15,6 +15,7 @@ public class AppManager {
     DesiredCapabilities caps;
 
     ArticleHelper article;
+    NavigationHelper navigation;
 
     public void init() throws MalformedURLException {
         caps = new DesiredCapabilities();
@@ -32,6 +33,11 @@ public class AppManager {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         article = new ArticleHelper(driver);
+        navigation = new NavigationHelper(driver);
+    }
+
+    public NavigationHelper navigation() {
+        return navigation;
     }
 
     public ArticleHelper article() {
